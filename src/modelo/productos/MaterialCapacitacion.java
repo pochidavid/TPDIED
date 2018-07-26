@@ -6,6 +6,7 @@
 package modelo.productos;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Objects;
 
 import util.Ordenable;
@@ -31,6 +32,11 @@ public abstract class MaterialCapacitacion implements Ordenable,Comparable {
 	 */
 	protected Double costo;
 	
+        protected Integer calificacion;
+        
+        protected Date fecha_publicacion;
+        
+        protected Integer relevancia;
 
 	/**
 	 * Constructor por defecto
