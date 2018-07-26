@@ -23,6 +23,8 @@ public class crear extends javax.swing.JPanel {
         jTextDuracion.setVisible(false);
         jLabel4.setVisible(false);
         jTextPaginas.setVisible(false);
+        jLabel7.setVisible(false);
+        jTextPrecio.setVisible(false);
         
         
         
@@ -53,6 +55,8 @@ public class crear extends javax.swing.JPanel {
         jButton2 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        jLabel7 = new javax.swing.JLabel();
+        jTextPrecio = new javax.swing.JTextField();
 
         jLabel1.setText("Crear nuevo Material de Capacitacion");
 
@@ -97,6 +101,8 @@ public class crear extends javax.swing.JPanel {
 
         jLabel6.setText("Fecha de publicacion:");
 
+        jLabel7.setText("Precio:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -121,17 +127,22 @@ public class crear extends javax.swing.JPanel {
                                     .addComponent(jLabel4))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextPaginas, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jRadioButtonVideo)))
+                                    .addComponent(jRadioButtonVideo)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jTextPaginas, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel7)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jTextPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jTextDuracion, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(31, 31, 31)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap(150, Short.MAX_VALUE))
+                        .addContainerGap(153, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -170,7 +181,9 @@ public class crear extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jTextPaginas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextPaginas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7)
+                    .addComponent(jTextPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
@@ -187,6 +200,8 @@ public class crear extends javax.swing.JPanel {
             jTextPaginas.setVisible(true);
             jLabel5.setVisible(false);
             jTextDuracion.setVisible(false);
+            jLabel7.setVisible(true);
+            jTextPrecio.setVisible(true);
         }
     }//GEN-LAST:event_jRadioButtonLibroActionPerformed
 
@@ -207,6 +222,8 @@ public class crear extends javax.swing.JPanel {
             jTextPaginas.setVisible(false);
             jLabel5.setVisible(true);
             jTextDuracion.setVisible(true);
+            jLabel7.setVisible(false);
+            jTextPrecio.setVisible(false);
         }
     }//GEN-LAST:event_jRadioButtonVideoActionPerformed
 
@@ -226,11 +243,13 @@ public class crear extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JRadioButton jRadioButtonLibro;
     private javax.swing.JRadioButton jRadioButtonVideo;
     private javax.swing.JTextField jTextCosto;
     private javax.swing.JTextField jTextDuracion;
     private javax.swing.JTextField jTextPaginas;
+    private javax.swing.JTextField jTextPrecio;
     private javax.swing.JTextField jTextTitulo;
     // End of variables declaration//GEN-END:variables
 }
