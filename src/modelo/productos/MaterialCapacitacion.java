@@ -36,7 +36,7 @@ public abstract class MaterialCapacitacion implements Ordenable,Comparable {
         
         protected Date fecha_publicacion;
         
-        protected Integer relevancia;
+        RelevanciaEnum relevancia = RelevanciaEnum.BAJA;
 
 	/**
 	 * Constructor por defecto
@@ -107,12 +107,13 @@ public abstract class MaterialCapacitacion implements Ordenable,Comparable {
 		this.fecha_publicacion = fecha_publicacion;
 	}
 
-	public Integer getRelevancia() {
+	public RelevanciaEnum getRelevancia() {
 		return relevancia;
 	}
 
-	public void setRelevancia(Integer relevancia) {
-		this.relevancia = relevancia;
+	public void setRelevancia(RelevanciaEnum relevancia) {
+           this.relevancia = relevancia;
+		
 	}
 
 	/**
@@ -140,6 +141,8 @@ public abstract class MaterialCapacitacion implements Ordenable,Comparable {
 		return String.format("[Titulo %s; PRECIO: %.1f]", this.getTitulo(), this.precio());
 	}
 
+        public abstract String[] toArrayString();
+        
 	@Override
 	public int valor() {
 		return this.precio().intValue();

@@ -36,4 +36,10 @@ public class Video extends MaterialCapacitacion {
 	public boolean equals(Object T){ //me cambi� el tipo de retorno a eso de Boolean
 		return (T instanceof Video && super.equals(T));
 	}
+
+    @Override
+    public String[] toArrayString() {
+        String[] string = {"Video",id.toString(),titulo,duracion.toString(),calificacion.toString(),costo.toString(),this.precio().toString(),fecha_publicacion.toString(),relevancia.toString()};
+        return string;
+    }
 }

@@ -5,9 +5,16 @@
  */
 package interfaces;
 
+import com.opencsv.CSVWriter;
+import gestores.GestorMaterial;
+import static interfaces.Inicial.biblioteca;
 import static interfaces.Inicial.panelprincipal;
 import java.awt.BorderLayout;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import modelo.productos.*;
 
@@ -60,6 +67,7 @@ public class crear extends javax.swing.JPanel {
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
         jLabel7 = new javax.swing.JLabel();
         jTextPrecio = new javax.swing.JTextField();
+        jButton3 = new javax.swing.JButton();
 
         jLabel1.setText("Crear nuevo Material de Capacitacion");
 
@@ -111,6 +119,13 @@ public class crear extends javax.swing.JPanel {
 
         jLabel7.setText("Precio:");
 
+        jButton3.setText("Guardar en disco");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -155,11 +170,13 @@ public class crear extends javax.swing.JPanel {
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton1)
-                        .addGap(74, 74, 74))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(231, 231, 231)
-                .addComponent(jButton2)
-                .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(74, 74, 74))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(219, 219, 219)
+                        .addComponent(jButton2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton3)
+                        .addGap(58, 58, 58))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -176,9 +193,9 @@ public class crear extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
-                            .addComponent(jTextCosto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextCosto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -197,7 +214,9 @@ public class crear extends javax.swing.JPanel {
                     .addComponent(jLabel5)
                     .addComponent(jTextDuracion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jButton2)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton2)
+                    .addComponent(jButton3))
                 .addContainerGap(44, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -246,28 +265,39 @@ public class crear extends javax.swing.JPanel {
         Date fechaPub = jDateChooser1.getDate();
 
         if(jRadioButtonLibro.isSelected()){
-            Integer paginas = Integer.parseInt(jTextPaginas.getText());
-            Double precio = Double.parseDouble(jTextPrecio.getText());
-            Libro libro = new Libro(id,titulo,costo,precio,paginas);
-            libro.setFecha_publicacion(fechaPub);
-            libro.setRelevancia(1);
-
+                Integer paginas = Integer.parseInt(jTextPaginas.getText());
+                Double precio = Double.parseDouble(jTextPrecio.getText());
+                Libro libro = new Libro(id,titulo,costo,precio,paginas);
+                libro.setFecha_publicacion(fechaPub);
+                libro.setCalificacion(50);
+                biblioteca.agregar(libro);
+                
         }
         else{
             Integer duracion = Integer.parseInt(jTextDuracion.getText());
             Video video = new Video(id,titulo,costo,duracion);
             video.setFecha_publicacion(fechaPub);
-            video.setRelevancia(1);
+            video.setCalificacion(50);
+            biblioteca.agregar(video);
+            
         }
         
-       
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        try {
+            GestorMaterial.guardarbibloteca();
+        } catch (IOException ex) {
+            Logger.getLogger(crear.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

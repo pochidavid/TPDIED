@@ -6,11 +6,10 @@
 package interfaces;
 
 import java.awt.BorderLayout;
+import modelo.*;
 
-/**
- *
- * @author Alexis Mandracchia
- */
+
+
 public class Inicial extends javax.swing.JFrame {
 
     /**
@@ -26,6 +25,7 @@ public class Inicial extends javax.swing.JFrame {
         panelprincipal.add(i, BorderLayout.CENTER);
         panelprincipal.revalidate();
         panelprincipal.repaint();
+               
         
         
     }
@@ -113,4 +113,7 @@ public class Inicial extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JPanel panelprincipal;
     // End of variables declaration//GEN-END:variables
+    public static modelo.BibliotecaList biblioteca = new BibliotecaList();
+    
+
 }

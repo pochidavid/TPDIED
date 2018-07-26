@@ -5,9 +5,6 @@
  */
 package modelo.productos;
 
-import java.util.Date;
-import java.util.Objects;
-
 /**
  * Representa un libro en el sistema de biblioteca digital
  * @author mdominguez
@@ -117,4 +114,10 @@ public class Libro extends MaterialCapacitacion {
 	public boolean equals(Object T){ //me cambi� el tipo de retorno a eso de Boolean
 		return (T instanceof Libro && super.equals(T));
 	}
+        
+        @Override
+        public String[] toArrayString(){
+            String[] string = {"Libro",id.toString(),titulo,paginas.toString(),calificacion.toString(),costo.toString(),this.precio().toString(),fecha_publicacion.toString(),relevancia.toString()};
+            return string;
+        }
 }
