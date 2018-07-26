@@ -91,7 +91,30 @@ public abstract class MaterialCapacitacion implements Ordenable,Comparable {
 		this.costo = costo;
 	}
 
-	
+	public Integer getCalificacion() {
+		return calificacion;
+	}
+
+	public void setCalificacion(Integer calificacion) {
+		this.calificacion = calificacion;
+	}
+
+	public Date getFecha_publicacion() {
+		return fecha_publicacion;
+	}
+
+	public void setFecha_publicacion(Date fecha_publicacion) {
+		this.fecha_publicacion = fecha_publicacion;
+	}
+
+	public Integer getRelevancia() {
+		return relevancia;
+	}
+
+	public void setRelevancia(Integer relevancia) {
+		this.relevancia = relevancia;
+	}
+
 	/**
 	 * El precio de un material se define segÃºn el tipo del material y toma como
 	 * base el costo del mismo

@@ -7,6 +7,9 @@ package interfaces;
 
 import static interfaces.Inicial.panelprincipal;
 import java.awt.BorderLayout;
+import java.util.Date;
+
+import modelo.productos.*;
 
 /**
  *
@@ -237,6 +240,26 @@ public class crear extends javax.swing.JPanel {
     }//GEN-LAST:event_jTextPaginasActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        Integer id = 1;
+        String titulo = jTextTitulo.getText();
+        Double costo = Double.parseDouble(jTextCosto.getText());
+        Date fechaPub = jDateChooser1.getDate();
+
+        if(jRadioButtonLibro.isSelected()){
+            Integer paginas = Integer.parseInt(jTextPaginas.getText());
+            Double precio = Double.parseDouble(jTextPrecio.getText());
+            Libro libro = new Libro(id,titulo,costo,precio,paginas);
+            libro.setFecha_publicacion(fechaPub);
+            libro.setRelevancia(1);
+
+        }
+        else{
+            Integer duracion = Integer.parseInt(jTextDuracion.getText());
+            Video video = new Video(id,titulo,costo,duracion);
+            video.setFecha_publicacion(fechaPub);
+            video.setRelevancia(1);
+        }
+        
        
     }//GEN-LAST:event_jButton2ActionPerformed
 
