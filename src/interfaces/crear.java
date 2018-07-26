@@ -98,6 +98,11 @@ public class crear extends javax.swing.JPanel {
         });
 
         jButton2.setText("Crear");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jLabel6.setText("Fecha de publicacion:");
 
@@ -230,6 +235,10 @@ public class crear extends javax.swing.JPanel {
     private void jTextPaginasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextPaginasActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextPaginasActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+       
+    }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
