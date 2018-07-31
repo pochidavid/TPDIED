@@ -96,22 +96,22 @@ public class GestorMaterial {
                 calificacion = Integer.parseInt(fila[4]);
                 costo = Double.parseDouble(fila[5]);
                 precioCompra = Double.parseDouble(fila[6]);
-                //fechaPubl = Date.valueOf(fila[7]);
                 DateFormat formatter = new SimpleDateFormat("EEE MMM d HH:mm:ss z yyyy");
                 fechaPubl = formatter.parse(fila[7]);
                 relevancia = RelevanciaEnum.valueOf(fila[8]);
 
-                if(fila[0]=="Libro"){
+                if(fila[0].equals("Libro")){
                     //Libro(Integer id, String titulo, Double costo, Double precioCompra, Integer paginas)
                     //{"Libro",id.toString(),titulo,paginas.toString(),calificacion.toString(),costo.toString(),this.precio().toString(),fecha_publicacion.toString(),relevancia.toString()};
                     paginas = Integer.parseInt(fila[3]);
                     biblioteca.agregar(new Libro(id,titulo,costo,precioCompra,paginas,fechaPubl,calificacion,relevancia));
 
-                }else if(fila[0]=="Video"){
-                    //Video(Integer id, String titulo, Double costo, Integer duracion)
-                    //{"Video",id.toString(),titulo,duracion.toString(),calificacion.toString(),costo.toString(),this.precio().toString(),fecha_publicacion.toString(),relevancia.toString()};
-                    duracion = Integer.parseInt(fila[3]);
-                    biblioteca.agregar(new Video(id,titulo,costo,duracion));
+                }else if(fila[0].equals("Video")){
+                        //Video(Integer id, String titulo, Double costo, Integer duracion)
+                        //{"Video",id.toString(),titulo,duracion.toString(),calificacion.toString(),costo.toString(),this.precio().toString(),fecha_publicacion.toString(),relevancia.toString()};
+                        duracion = Integer.parseInt(fila[3]);
+                        biblioteca.agregar(new Video(id,titulo,costo,duracion));
+
                 }
             }
 
