@@ -170,6 +170,11 @@ public class buscar extends javax.swing.JPanel {
         panelprincipal.repaint();
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButtonBuscarActionPerformed(java.awt.event.ActionEvent evt){
+
+    }
+    
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

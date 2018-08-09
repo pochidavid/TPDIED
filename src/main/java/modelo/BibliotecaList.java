@@ -5,6 +5,7 @@ import modelo.productos.MaterialCapacitacion;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Date;
 
 public class BibliotecaList implements Biblioteca {
     private ArrayList<MaterialCapacitacion> materiales;
@@ -80,5 +81,41 @@ public class BibliotecaList implements Biblioteca {
         if(materiales.get(pibote).getCosto().intValue() > costo && i != f) return buscadorBinario(i,pibote,costo);
         if(materiales.get(pibote).getCosto().intValue() == costo) return materiales.get(pibote);
         throw new RuntimeException("Material de precio " + costo + " no encontrado");
+    }
+
+    public BibliotecaList buscarPorTitulo(String titulo){
+        BibliotecaList resultado =  new BibliotecaList();
+
+        for(MaterialCapacitacion material:materiales){
+            if(material.getTitulo().equals(titulo)) resultado.agregar(material);
+        }
+
+        return resultado;
+    }
+
+    public BibliotecaList buscarPorCalificacionMin(Integer calificacion){
+        BibliotecaList resultado =  new BibliotecaList();
+
+        for(MaterialCapacitacion material:materiales){
+            if(material.getCalificacion() >= calificacion) resultado.agregar(material);
+        }
+
+        return resultado;
+    }
+
+    public BibliotecaList buscarPorTema(Integer calificacion){
+        return  null;
+    }
+
+    public BibliotecaList buscarPorFecha(Date inicio, Date fin){
+        BibliotecaList resultado =  new BibliotecaList();
+
+        for(MaterialCapacitacion material:materiales){
+            if((material.getFecha_publicacion().after(inicio) || material.getFecha_publicacion().equals(inicio))
+            && (material.getFecha_publicacion().before(fin) || material.getFecha_publicacion().equals(fin)))
+                resultado.agregar(material);
+        }
+
+        return resultado;
     }
 }
