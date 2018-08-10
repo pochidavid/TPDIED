@@ -50,11 +50,12 @@ public class Libro extends MaterialCapacitacion {
 		this.paginas = paginas;
 	}
 
-	public Libro(Integer id, String titulo, Double costo, Double precioCompra, Integer paginas, Date fechaPub, Integer calificacion, RelevanciaEnum relevancia) {
+	public Libro(Integer id, String titulo, Double costo, Double precioCompra, Integer paginas, Date fechaPub, Integer calificacion, RelevanciaEnum relevancia, Boolean activo) {
 		this(id, titulo, costo,precioCompra,paginas);
 		this.fecha_publicacion = fechaPub;
 		this.calificacion = calificacion;
 		this.relevancia = relevancia;
+		this.activo = activo;
 	}
 
 	/**
@@ -126,7 +127,7 @@ public class Libro extends MaterialCapacitacion {
         
         @Override
         public String[] toArrayString(){
-            String[] string = {"Libro",id.toString(),titulo,paginas.toString(),calificacion.toString(),costo.toString(),this.precio().toString(),fecha_publicacion.toString(),relevancia.toString()};
+            String[] string = {"Libro",id.toString(),titulo,paginas.toString(),calificacion.toString(),costo.toString(),this.precio().toString(),fecha_publicacion.toString(),relevancia.toString(),activo.toString()};
             return string;
         }
 }

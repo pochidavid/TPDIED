@@ -6,10 +6,13 @@ import modelo.productos.MaterialCapacitacionComparator;
 import java.util.PriorityQueue;
 
 public class Usuario {
-    PriorityQueue<MaterialCapacitacion> wishList = new PriorityQueue<MaterialCapacitacion>(10, new MaterialCapacitacionComparator());
+    private static PriorityQueue<MaterialCapacitacion> wishList = new PriorityQueue<MaterialCapacitacion>(10, new MaterialCapacitacionComparator());
 
-    public boolean addWhishlist(MaterialCapacitacion mc){
-        return wishList.add(mc);
+    public static void addWishList(MaterialCapacitacion material) {
+        wishList.add(material);
     }
 
+    public static PriorityQueue<MaterialCapacitacion> getWishList() {
+        return wishList;
+    }
 }

@@ -87,7 +87,7 @@ public class BibliotecaList implements Biblioteca {
         BibliotecaList resultado =  new BibliotecaList();
 
         for(MaterialCapacitacion material:materiales){
-            if(material.getTitulo().equals(titulo)) resultado.agregar(material);
+            if(material.getTitulo().contains(titulo)) resultado.agregar(material);
         }
 
         return resultado;
@@ -103,8 +103,11 @@ public class BibliotecaList implements Biblioteca {
         return resultado;
     }
 
-    public BibliotecaList buscarPorTema(Integer calificacion){
-        return  null;
+    public MaterialCapacitacion buscarPorId(Integer id){
+        for(MaterialCapacitacion material:materiales){
+            if(material.getId() == id) return material;
+        }
+        return null;
     }
 
     public BibliotecaList buscarPorFecha(Date inicio, Date fin){
@@ -117,5 +120,12 @@ public class BibliotecaList implements Biblioteca {
         }
 
         return resultado;
+    }
+
+    public MaterialCapacitacion getMaterialPorTitulo(String titulo){
+        for(MaterialCapacitacion material:materiales){
+            if(material.getTitulo().equals(titulo)) return material;
+        }
+        return null;
     }
 }

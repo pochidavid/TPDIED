@@ -10,6 +10,7 @@ package modelo.productos;
  * @author Alexis
  */
 public enum RelevanciaEnum{
-    ALTA,MEDIA,BAJA
+    ALTA, MEDIA, BAJA;
+
 
 }

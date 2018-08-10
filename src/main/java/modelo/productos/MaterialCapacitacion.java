@@ -36,7 +36,9 @@ public abstract class MaterialCapacitacion implements Ordenable,Comparable {
         
         protected Date fecha_publicacion;
         
-        RelevanciaEnum relevancia = RelevanciaEnum.BAJA;
+        protected RelevanciaEnum relevancia = RelevanciaEnum.BAJA;
+
+        protected Boolean activo;
 
 	/**
 	 * Constructor por defecto
@@ -187,5 +189,12 @@ public abstract class MaterialCapacitacion implements Ordenable,Comparable {
 			return this.getTitulo().toLowerCase().compareTo(((MaterialCapacitacion)T).getTitulo().toLowerCase());
 		}
 	}
-	
+
+    public Boolean getActivo() {
+        return activo;
+    }
+
+    public void setActivo(Boolean activo) {
+        this.activo = activo;
+    }
 }

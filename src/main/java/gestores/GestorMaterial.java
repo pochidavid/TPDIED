@@ -53,14 +53,14 @@ public class GestorMaterial {
         return null;
     }
     
-    public static void guardarBiblioteca() throws IOException{
+    private static void guardarBiblioteca() throws IOException{
         
         List<String[]> materiales = new ArrayList<String[]>();
         biblioteca.materiales().stream().forEach((material) -> {
             materiales.add(material.toArrayString());
         });
         
-        try (CSVWriter writer = new CSVWriter(new FileWriter(directory,true))) {
+        try (CSVWriter writer = new CSVWriter(new FileWriter(directory,false))) {
             writer.writeAll(materiales);
         }
             
@@ -78,6 +78,7 @@ public class GestorMaterial {
         Integer calificacion;
         Date fechaPubl;
         RelevanciaEnum relevancia;
+        Boolean activo;
 
         try {
             csvReader = new CSVReader(new FileReader(directory));
@@ -96,18 +97,19 @@ public class GestorMaterial {
                 DateFormat formatter = new SimpleDateFormat("EEE MMM d HH:mm:ss z yyyy");
                 fechaPubl = formatter.parse(fila[7]);
                 relevancia = RelevanciaEnum.valueOf(fila[8]);
+                activo = Boolean.parseBoolean(fila[9]);
 
                 if(fila[0].equals("Libro")){
                     //Libro(Integer id, String titulo, Double costo, Double precioCompra, Integer paginas)
                     //{"Libro",id.toString(),titulo,paginas.toString(),calificacion.toString(),costo.toString(),this.precio().toString(),fecha_publicacion.toString(),relevancia.toString()};
                     paginas = Integer.parseInt(fila[3]);
-                    biblioteca.agregar(new Libro(id,titulo,costo,precioCompra,paginas,fechaPubl,calificacion,relevancia));
+                    biblioteca.agregar(new Libro(id,titulo,costo,precioCompra,paginas,fechaPubl,calificacion,relevancia,activo));
 
                 }else if(fila[0].equals("Video")){
                         //Video(Integer id, String titulo, Double costo, Integer duracion)
                         //{"Video",id.toString(),titulo,duracion.toString(),calificacion.toString(),costo.toString(),this.precio().toString(),fecha_publicacion.toString(),relevancia.toString()};
                         duracion = Integer.parseInt(fila[3]);
-                        biblioteca.agregar(new Video(id,titulo,costo,duracion));
+                        biblioteca.agregar(new Video(id,titulo,costo,duracion,fechaPubl,calificacion,relevancia,activo));
 
                 }
             }
@@ -122,4 +124,15 @@ public class GestorMaterial {
 
     }
 
+    public static void borrarMaterial(String titulo) {
+
+        biblioteca.getMaterialPorTitulo(titulo).setActivo(false);
+
+        try {
+            guardarBiblioteca();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
 }

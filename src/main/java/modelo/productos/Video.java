@@ -20,11 +20,12 @@ public class Video extends MaterialCapacitacion {
 		super(id,titulo,costo);
 		this.duracion=duracion;
 	}
-	public Video(Integer id, String titulo, Double costo, Integer duracion, Date fechaPub, Integer calificacion, RelevanciaEnum relevancia){
+	public Video(Integer id, String titulo, Double costo, Integer duracion, Date fechaPub, Integer calificacion, RelevanciaEnum relevancia, Boolean activo){
 		this(id,titulo,costo,duracion);
 		this.fecha_publicacion = fechaPub;
 		this.calificacion = calificacion;
 		this.relevancia = relevancia;
+		this.activo = activo;
 	}
 
 	@Override
@@ -48,7 +49,7 @@ public class Video extends MaterialCapacitacion {
 
     @Override
     public String[] toArrayString() {
-        String[] string = {"Video",id.toString(),titulo,duracion.toString(),calificacion.toString(),costo.toString(),this.precio().toString(),fecha_publicacion.toString(),relevancia.toString()};
+        String[] string = {"Video",id.toString(),titulo,duracion.toString(),calificacion.toString(),costo.toString(),this.precio().toString(),fecha_publicacion.toString(),relevancia.toString(),activo.toString()};
         return string;
     }
 }

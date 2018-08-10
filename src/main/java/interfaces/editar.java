@@ -19,12 +19,12 @@ import modelo.productos.*;
  *
  * @author Alexis
  */
-public class crear extends javax.swing.JPanel {
+public class editar extends javax.swing.JPanel {
 
     /**
      * Creates new form crear
      */
-    public crear() {
+    public editar() {
         initComponents();
         jLabel5.setVisible(false);
         jTextDuracion.setVisible(false);
@@ -52,8 +52,6 @@ public class crear extends javax.swing.JPanel {
         jTextTitulo = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jTextCosto = new javax.swing.JTextField();
-        jRadioButtonLibro = new javax.swing.JRadioButton();
-        jRadioButtonVideo = new javax.swing.JRadioButton();
         jLabel4 = new javax.swing.JLabel();
         jTextPaginas = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
@@ -65,27 +63,11 @@ public class crear extends javax.swing.JPanel {
         jLabel7 = new javax.swing.JLabel();
         jTextPrecio = new javax.swing.JTextField();
 
-        jLabel1.setText("Crear nuevo Material de Capacitacion");
+        jLabel1.setText("Editar Material de Capacitacion");
 
         jLabel2.setText("Titulo:");
 
         jLabel3.setText("Costo:");
-
-        buttonGroup1.add(jRadioButtonLibro);
-        jRadioButtonLibro.setText("Libro");
-        jRadioButtonLibro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButtonLibroActionPerformed(evt);
-            }
-        });
-
-        buttonGroup1.add(jRadioButtonVideo);
-        jRadioButtonVideo.setText("Video");
-        jRadioButtonVideo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButtonVideoActionPerformed(evt);
-            }
-        });
 
         jLabel4.setText("Paginas:");
 
@@ -104,7 +86,7 @@ public class crear extends javax.swing.JPanel {
             }
         });
 
-        jButton2.setText("Crear");
+        jButton2.setText("Editar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -134,18 +116,13 @@ public class crear extends javax.swing.JPanel {
                                     .addComponent(jTextTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jTextCosto, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jRadioButtonLibro)
-                                    .addComponent(jLabel4))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jRadioButtonVideo)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jTextPaginas, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel7)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTextPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(jLabel4)
+                                .addGap(30, 30, 30)
+                                .addComponent(jTextPaginas, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel7)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -163,7 +140,7 @@ public class crear extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(219, 219, 219)
                         .addComponent(jButton2)
-                        .addGap(58, 430, Short.MAX_VALUE))))
+                        .addGap(58, 427, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -186,11 +163,7 @@ public class crear extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButtonLibro)
-                    .addComponent(jRadioButtonVideo))
-                .addGap(18, 18, 18)
+                .addGap(59, 59, 59)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(jTextPaginas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -206,17 +179,6 @@ public class crear extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jRadioButtonLibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonLibroActionPerformed
-        if (jRadioButtonLibro.isSelected()){
-            jLabel4.setVisible(true);
-            jTextPaginas.setVisible(true);
-            jLabel5.setVisible(false);
-            jTextDuracion.setVisible(false);
-            jLabel7.setVisible(true);
-            jTextPrecio.setVisible(true);
-        }
-    }//GEN-LAST:event_jRadioButtonLibroActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         menu m = new menu();
         m.setSize(800, 400);
@@ -227,17 +189,6 @@ public class crear extends javax.swing.JPanel {
         panelprincipal.revalidate();
         panelprincipal.repaint();
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jRadioButtonVideoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonVideoActionPerformed
-        if (jRadioButtonVideo.isSelected()){
-            jLabel4.setVisible(false);
-            jTextPaginas.setVisible(false);
-            jLabel5.setVisible(true);
-            jTextDuracion.setVisible(true);
-            jLabel7.setVisible(false);
-            jTextPrecio.setVisible(false);
-        }
-    }//GEN-LAST:event_jRadioButtonVideoActionPerformed
 
     private void jTextPaginasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextPaginasActionPerformed
         // TODO add your handling code here:
@@ -284,8 +235,6 @@ public class crear extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JRadioButton jRadioButtonLibro;
-    private javax.swing.JRadioButton jRadioButtonVideo;
     private javax.swing.JTextField jTextCosto;
     private javax.swing.JTextField jTextDuracion;
     private javax.swing.JTextField jTextPaginas;

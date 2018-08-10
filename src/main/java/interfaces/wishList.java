@@ -7,6 +7,7 @@ package interfaces;
 
 import gestores.GestorMaterial;
 import modelo.BibliotecaList;
+import modelo.Usuario;
 import modelo.productos.MaterialCapacitacion;
 
 import javax.swing.table.DefaultTableModel;
@@ -26,6 +27,25 @@ public class wishList extends javax.swing.JPanel {
      */
     public wishList() {
         initComponents();
+
+        Object[] row = new Object[5];
+        DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
+        modelo.setRowCount(0);
+
+        Object[] materialArray = Usuario.getWishList().toArray();
+
+        for(Object material:materialArray){
+
+            row[0] = ((MaterialCapacitacion) material).getTitulo();
+            row[1] = ((MaterialCapacitacion) material).getCalificacion();
+            row[2] = ((MaterialCapacitacion) material).precio();
+            row[3] = ((MaterialCapacitacion) material).getFecha_publicacion();
+            row[4] = ((MaterialCapacitacion) material).getRelevancia();
+
+            modelo.addRow(row);
+        }
+
+        jTable1.setModel(modelo);
     }
 
     /**
@@ -41,6 +61,7 @@ public class wishList extends javax.swing.JPanel {
         jTable1 = new javax.swing.JTable();
         jButtonAsignar = new javax.swing.JButton();
 
+        setMaximumSize(new java.awt.Dimension(800, 400));
         setPreferredSize(new java.awt.Dimension(800, 400));
         setSize(new java.awt.Dimension(800, 400));
 
@@ -68,20 +89,19 @@ public class wishList extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtonAsignar)
+                .addGap(70, 70, 70))
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 695, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButtonAsignar)))
+                .addComponent(jScrollPane1)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 272, Short.MAX_VALUE)
-                .addGap(12, 12, 12)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButtonAsignar)
                 .addContainerGap())
         );
