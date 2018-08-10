@@ -9,6 +9,7 @@ package modelo.productos;
  *
  * @author Alexis
  */
-public enum RelevanciaEnum {
+public enum RelevanciaEnum{
     ALTA,MEDIA,BAJA
+
 }

@@ -13,10 +13,7 @@ import modelo.productos.MaterialCapacitacion;
 import modelo.productos.RelevanciaEnum;
 import modelo.productos.Video;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -33,8 +30,8 @@ import java.util.logging.Logger;
  */
 public class GestorMaterial {
 
-    private static String directory = "/Users/juliansanchez/Documents/tpDatos.csv";
-    public static Biblioteca biblioteca = new BibliotecaList();
+    private static String directory = "."+ File.separator+"tpDatos.csv";
+    public static BibliotecaList biblioteca = new BibliotecaList();
     
     public static void guardar(MaterialCapacitacion material){
         try {
