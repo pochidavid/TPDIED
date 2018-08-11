@@ -48,12 +48,14 @@ public class GestorMaterial {
         } catch (IOException ex) {
             Logger.getLogger(GestorMaterial.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        System.out.println("Se creo un material del tipo: "+material.getClass().getSimpleName()+ " y titulo: "+ material.getTitulo());
     }
     public static MaterialCapacitacion obtener(Integer id){
         return null;
     }
     
-    private static void guardarBiblioteca() throws IOException{
+    public static void guardarBiblioteca() throws IOException{
         
         List<String[]> materiales = new ArrayList<String[]>();
         biblioteca.materiales().stream().forEach((material) -> {
@@ -124,9 +126,28 @@ public class GestorMaterial {
 
     }
 
-    public static void borrarMaterial(String titulo) {
+    public static void borrarMaterial(Integer id) {
+        MaterialCapacitacion material =biblioteca.buscarPorId(id);
+        material.setActivo(false);
 
-        biblioteca.getMaterialPorTitulo(titulo).setActivo(false);
+        try {
+            guardarBiblioteca();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        
+        System.out.println("Se ha eliminado "+material.getTitulo());
+
+    }
+    
+    public static void editarMaterial(Integer id, String titulo, Double costo, Date fechaPubl, Integer paginas, Double precio){
+        MaterialCapacitacion material = biblioteca.buscarPorId(id);
+        material.setTitulo(titulo);
+        material.setCosto(costo);
+        material.setFecha_publicacion(fechaPubl);
+
+        ((Libro) material).setPaginas(paginas);
+        ((Libro) material).setPrecioCompra(precio);
 
         try {
             guardarBiblioteca();
@@ -134,5 +155,23 @@ public class GestorMaterial {
             e.printStackTrace();
         }
 
+        System.out.println(material.toArrayString());
+    }
+    
+    public static void editarMaterial(Integer id, String titulo, Double costo, Date fechaPubl, Integer duracion){
+        MaterialCapacitacion material =biblioteca.buscarPorId(id);
+        material.setTitulo(titulo);
+        material.setCosto(costo);
+        material.setFecha_publicacion(fechaPubl);
+
+        ((Video) material).setDuracion(duracion);
+
+        try {
+            guardarBiblioteca();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("Se edito correctamente el Material "+id);
     }
 }

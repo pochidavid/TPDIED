@@ -8,13 +8,16 @@ package interfaces;
 import gestores.GestorMaterial;
 import modelo.BibliotecaList;
 import modelo.Usuario;
+import modelo.productos.Libro;
 import modelo.productos.MaterialCapacitacion;
+import modelo.productos.Video;
 
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 
 import static interfaces.Inicial.panelprincipal;
 import java.awt.BorderLayout;
+import javax.swing.table.TableColumnModel;
 
 /**
  *
@@ -61,6 +64,7 @@ public class buscar extends javax.swing.JPanel {
         jButtonAgregar = new javax.swing.JButton();
         jButtonAsignar = new javax.swing.JButton();
         borrar = new javax.swing.JButton();
+        editar = new javax.swing.JButton();
 
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel1.setText("Buscar:");
@@ -86,15 +90,24 @@ public class buscar extends javax.swing.JPanel {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Título", "Calificación", "Precio", "Fecha de publicación", "Relevancia"
+                "Título", "Calificación", "Precio", "Fecha de publicación", "Relevancia", "Id", "Titpo"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         jButton1.setText("Menu");
@@ -120,15 +133,28 @@ public class buscar extends javax.swing.JPanel {
             }
         });
 
+        editar.setText("Editar");
+        editar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton1)
+                                .addGap(31, 31, 31))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -155,21 +181,17 @@ public class buscar extends javax.swing.JPanel {
                                         .addComponent(jLabel4)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(0, 28, Short.MAX_VALUE))
-                            .addComponent(jScrollPane1)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton1)
-                                .addGap(31, 31, 31))))
+                                .addGap(0, 28, Short.MAX_VALUE)))
+                        .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(107, 107, 107)
                         .addComponent(jButtonAgregar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButtonAsignar)
-                        .addGap(18, 18, 18)
-                        .addComponent(borrar)))
-                .addContainerGap())
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(editar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(borrar)
+                        .addGap(15, 15, 15))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -201,7 +223,8 @@ public class buscar extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonAgregar)
                     .addComponent(jButtonAsignar)
-                    .addComponent(borrar))
+                    .addComponent(borrar)
+                    .addComponent(editar))
                 .addContainerGap(26, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -240,20 +263,40 @@ public class buscar extends javax.swing.JPanel {
     }//GEN-LAST:event_jButtonBuscarActionPerformed
 
     private void borrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_borrarActionPerformed
-        String titulo = jTable1.getValueAt(jTable1.getSelectedRow(),0).toString();
+        Integer id = Integer.parseInt(jTable1.getModel().getValueAt(jTable1.getSelectedRow(),5).toString());
 
-        GestorMaterial.borrarMaterial(titulo);
+        GestorMaterial.borrarMaterial(id);
 
         imprimirMateriales(GestorMaterial.biblioteca);
     }//GEN-LAST:event_borrarActionPerformed
 
+    private void editarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarActionPerformed
+        Integer id = Integer.parseInt(jTable1.getModel().getValueAt(jTable1.getSelectedRow(),5).toString());
+        editar e = null;
+        MaterialCapacitacion material = GestorMaterial.biblioteca.buscarPorId(id);
+
+        if(material instanceof Video) e = new editar(id,material.getTitulo(),material.getCosto(),material.getFecha_publicacion(),((Video) material).getDuracion());
+        else if(material instanceof Libro) e = new editar(id, material.getTitulo(),material.getCosto(),material.getFecha_publicacion(),((Libro) material).getPaginas(),material.precio());
+
+        if(e !=null) {
+            e.setSize(800, 400);
+            e.setLocation(5, 5);
+        }
+        panelprincipal.removeAll();
+        panelprincipal.add(e, BorderLayout.CENTER);
+        panelprincipal.revalidate();
+        panelprincipal.repaint();
+    }//GEN-LAST:event_editarActionPerformed
+
     private void imprimirMateriales(BibliotecaList biblioteca){
-        Object[] row = new Object[5];
+        Object[] row = new Object[7];
+        TableColumnModel tcm = jTable1.getColumnModel();
+        if(tcm.getColumnCount()==7) tcm.removeColumn( tcm.getColumn(5));
         DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
         modelo.setRowCount(0);
-
         Object[] materialArray = biblioteca.materiales().toArray();
 
+        //If you need access to the data (Id) then you use table.getModel().getValueAt(...)
         for(Object material:materialArray){
 
             row[0] = ((MaterialCapacitacion) material).getTitulo();
@@ -261,6 +304,9 @@ public class buscar extends javax.swing.JPanel {
             row[2] = ((MaterialCapacitacion) material).precio();
             row[3] = ((MaterialCapacitacion) material).getFecha_publicacion();
             row[4] = ((MaterialCapacitacion) material).getRelevancia();
+            row[5] = ((MaterialCapacitacion) material).getId();
+            row[6] = ((MaterialCapacitacion) material).getClass().getSimpleName();
+
 
             if(((MaterialCapacitacion) material).getActivo())modelo.addRow(row);
         }
@@ -271,6 +317,7 @@ public class buscar extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton borrar;
+    private javax.swing.JButton editar;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonAgregar;
     private javax.swing.JButton jButtonAsignar;

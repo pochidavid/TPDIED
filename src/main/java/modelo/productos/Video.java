@@ -28,6 +28,18 @@ public class Video extends MaterialCapacitacion {
 		this.activo = activo;
 	}
 
+	public static void setCosto_segundo(double costo_segundo) {
+		Video.costo_segundo = costo_segundo;
+	}
+
+	public Integer getDuracion() {
+		return duracion;
+	}
+
+	public void setDuracion(Integer duracion) {
+		this.duracion = duracion;
+	}
+
 	@Override
 	public Double precio() {
 		return this.costo + (this.duracion*costo_segundo);

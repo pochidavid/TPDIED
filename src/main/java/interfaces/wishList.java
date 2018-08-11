@@ -15,6 +15,7 @@ import javax.swing.table.TableModel;
 
 import static interfaces.Inicial.panelprincipal;
 import java.awt.BorderLayout;
+import javax.swing.table.TableColumnModel;
 
 /**
  *
@@ -28,7 +29,9 @@ public class wishList extends javax.swing.JPanel {
     public wishList() {
         initComponents();
 
-        Object[] row = new Object[5];
+        TableColumnModel tcm = jTable1.getColumnModel();
+        tcm.removeColumn( tcm.getColumn(5));
+        Object[] row = new Object[7];
         DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
         modelo.setRowCount(0);
 
@@ -41,7 +44,9 @@ public class wishList extends javax.swing.JPanel {
             row[2] = ((MaterialCapacitacion) material).precio();
             row[3] = ((MaterialCapacitacion) material).getFecha_publicacion();
             row[4] = ((MaterialCapacitacion) material).getRelevancia();
-
+            row[5] = ((MaterialCapacitacion) material).getId();
+            row[6] = ((MaterialCapacitacion) material).getClass().getSimpleName();
+            
             modelo.addRow(row);
         }
 
@@ -67,15 +72,23 @@ public class wishList extends javax.swing.JPanel {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Título", "Calificación", "Precio", "Fecha de publicación", "Relevancia"
+                "Título", "Calificación", "Precio", "Fecha de publicación", "Relevancia", "Id", "Tipo"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         jButtonAsignar.setText("Salir");
@@ -94,8 +107,8 @@ public class wishList extends javax.swing.JPanel {
                 .addComponent(jButtonAsignar)
                 .addGap(70, 70, 70))
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane1)
-                .addContainerGap())
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 794, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -103,7 +116,7 @@ public class wishList extends javax.swing.JPanel {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButtonAsignar)
-                .addContainerGap())
+                .addContainerGap(142, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

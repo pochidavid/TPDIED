@@ -24,17 +24,42 @@ public class editar extends javax.swing.JPanel {
     /**
      * Creates new form crear
      */
-    public editar() {
+    private Integer id;
+    private String tipo;
+    
+    public editar(Integer id,String titulo,Double costo, Date fechaPub, Integer paginas, Double precio) {
         initComponents();
         jLabel5.setVisible(false);
         jTextDuracion.setVisible(false);
         jLabel4.setVisible(false);
+        jTextPaginas.setVisible(true);
+        jLabel7.setVisible(false);
+        jTextPrecio.setVisible(true);
+        tipo = "Libro";
+        
+        this.id = id;
+        jTextTitulo.setText(titulo);
+        jTextCosto.setText(costo.toString());
+        jTextPaginas.setText(paginas.toString());
+        jTextPrecio.setText(precio.toString());
+        jDateChooser1.setDate(fechaPub);
+    }
+
+    public editar(Integer id,String titulo,Double costo, Date fechaPub, Integer duracion) {
+        initComponents();
+        jLabel5.setVisible(false);
+        jTextDuracion.setVisible(true);
+        jLabel4.setVisible(false);
         jTextPaginas.setVisible(false);
         jLabel7.setVisible(false);
         jTextPrecio.setVisible(false);
-        
-        
-        
+        tipo = "Video";
+
+        this.id = id;
+        jTextTitulo.setText(titulo);
+        jTextCosto.setText(costo.toString());
+        jTextDuracion.setText(duracion.toString());
+        jDateChooser1.setDate(fechaPub);
     }
 
     /**
@@ -57,7 +82,7 @@ public class editar extends javax.swing.JPanel {
         jLabel5 = new javax.swing.JLabel();
         jTextDuracion = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        EditarButton = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
         jLabel7 = new javax.swing.JLabel();
@@ -86,10 +111,10 @@ public class editar extends javax.swing.JPanel {
             }
         });
 
-        jButton2.setText("Editar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        EditarButton.setText("Editar");
+        EditarButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                EditarButtonActionPerformed(evt);
             }
         });
 
@@ -105,42 +130,43 @@ public class editar extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(167, 167, 167)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel3))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextCosto, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addGap(30, 30, 30)
-                                .addComponent(jTextPaginas, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextDuracion, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap(153, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton1)
                         .addGap(74, 74, 74))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(219, 219, 219)
-                        .addComponent(jButton2)
-                        .addGap(58, 427, Short.MAX_VALUE))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(167, 167, 167)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel2)
+                                            .addComponent(jLabel3))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jTextTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jTextCosto, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel4)
+                                        .addGap(30, 30, 30)
+                                        .addComponent(jTextPaginas, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel7)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jTextPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel5)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jTextDuracion, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(219, 219, 219)
+                                .addComponent(EditarButton)))
+                        .addContainerGap(153, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -174,7 +200,7 @@ public class editar extends javax.swing.JPanel {
                     .addComponent(jLabel5)
                     .addComponent(jTextDuracion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jButton2)
+                .addComponent(EditarButton)
                 .addContainerGap(44, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -194,39 +220,41 @@ public class editar extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextPaginasActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        Integer id = GestorMaterial.biblioteca.cantidadMateriales();
+    private void EditarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarButtonActionPerformed
         String titulo = jTextTitulo.getText();
         Double costo = Double.parseDouble(jTextCosto.getText());
         Date fechaPub = jDateChooser1.getDate();
+        Integer paginas;
+        Double precio;
+        Integer duracion;
 
-        if(jRadioButtonLibro.isSelected()){
-                Integer paginas = Integer.parseInt(jTextPaginas.getText());
-                Double precio = Double.parseDouble(jTextPrecio.getText());
-                Libro libro = new Libro(id,titulo,costo,precio,paginas);
-                libro.setFecha_publicacion(fechaPub);
-                libro.setCalificacion(50);
-                libro.setActivo(true);
-                GestorMaterial.guardar(libro);
-                
+        if(tipo.equals("Libro")){
+            paginas = Integer.parseInt(jTextPaginas.getText());
+            precio = Double.parseDouble(jTextPrecio.getText());
+            GestorMaterial.editarMaterial(id,titulo,costo,fechaPub,paginas,precio);
         }
-        else{
-            Integer duracion = Integer.parseInt(jTextDuracion.getText());
-            Video video = new Video(id,titulo,costo,duracion);
-            video.setFecha_publicacion(fechaPub);
-            video.setCalificacion(50);
-            video.setActivo(true);
-            GestorMaterial.guardar(video);
-            
+        else if(tipo.equals("Video")){
+            duracion = Integer.parseInt(jTextDuracion.getText());
+            GestorMaterial.editarMaterial(id,titulo,costo,fechaPub,duracion);
+
         }
-        
-    }//GEN-LAST:event_jButton2ActionPerformed
+
+        buscar b = new buscar();
+        b.setSize(800, 400);
+        b.setLocation(5, 5);
+
+        panelprincipal.removeAll();
+        panelprincipal.add(b, BorderLayout.CENTER);
+        panelprincipal.revalidate();
+        panelprincipal.repaint();
+
+    }//GEN-LAST:event_EditarButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton EditarButton;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
