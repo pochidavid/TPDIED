@@ -1,36 +1,32 @@
 package estructuras;
 
-import java.util.List;
-import modelo.productos.MaterialCapacitacion;
-import java.util.Comparator;
+import modelo.productos.Criterio;
+import modelo.productos.TipoNodo;
 
-public abstract class Arbol {
+public class Arbol {
+    public Nodo raiz;
 
-	public abstract boolean esVacio();
+    public Arbol(TipoNodo tipoNodo, String valor){
+        raiz = new Nodo(tipoNodo,valor);
+    }
 
-	public abstract void add(MaterialCapacitacion mat);
+    //buscarNodo()
 
-	public abstract Arbol izquierdo();
+    public Boolean cumpleCriterio(Criterio criterio){
+        if(criterio.getDonde().equals(raiz.tipoNodo))
+        switch(criterio.getTipo()){
+            case CONTIENE: return raiz.getValor().contains(criterio.getValor());
+            case ES: return raiz.getValor().equals(criterio.getValor());
+        }
+        else
+            for(Arbol arbol:raiz.getHijos()) if (arbol.cumpleCriterio(criterio)) return true;
+        return false;
+    }
 
-	public abstract Arbol derecho();
-	
-	public abstract boolean contiene(MaterialCapacitacion unValor);
-
-	public abstract boolean equals(Arbol unArbol);
-
-	public abstract Integer profundidad();
-	
-	public abstract void imprimir();
-
-	public abstract List<MaterialCapacitacion> inOrden();
-	public abstract List<MaterialCapacitacion> preOrden();
-	public abstract List<MaterialCapacitacion> postOrden();
-
-	public abstract Integer tamanio();
-	public abstract Integer tamanioLibros();
-	public abstract Integer tamanioVideos();
-
-
-	public abstract MaterialCapacitacion buscar(Integer precio1);
-	public abstract List<MaterialCapacitacion> rango(Double precio1, Double precio2);
+    public Boolean cumpleCriterios(Criterio[] criterios){
+        for (Criterio criterio:criterios){
+            if(!cumpleCriterio(criterio)) return false;
+        }
+        return true;
+    }
 }

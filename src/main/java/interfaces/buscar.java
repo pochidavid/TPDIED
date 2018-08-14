@@ -16,6 +16,7 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 
 import static interfaces.Inicial.panelprincipal;
+import interfaces.generarArbol;
 import java.awt.BorderLayout;
 import javax.swing.table.TableColumnModel;
 
@@ -65,6 +66,7 @@ public class buscar extends javax.swing.JPanel {
         jButtonAsignar = new javax.swing.JButton();
         borrar = new javax.swing.JButton();
         editar = new javax.swing.JButton();
+        arbolButton = new javax.swing.JButton();
 
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel1.setText("Buscar:");
@@ -140,6 +142,13 @@ public class buscar extends javax.swing.JPanel {
             }
         });
 
+        arbolButton.setText("Arbol");
+        arbolButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                arbolButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -181,12 +190,14 @@ public class buscar extends javax.swing.JPanel {
                                         .addComponent(jLabel4)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(0, 28, Short.MAX_VALUE)))
+                                .addGap(0, 0, Short.MAX_VALUE)))
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jButtonAgregar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButtonAsignar)
+                        .addGap(18, 18, 18)
+                        .addComponent(arbolButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(editar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -224,7 +235,8 @@ public class buscar extends javax.swing.JPanel {
                     .addComponent(jButtonAgregar)
                     .addComponent(jButtonAsignar)
                     .addComponent(borrar)
-                    .addComponent(editar))
+                    .addComponent(editar)
+                    .addComponent(arbolButton))
                 .addContainerGap(26, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -288,6 +300,20 @@ public class buscar extends javax.swing.JPanel {
         panelprincipal.repaint();
     }//GEN-LAST:event_editarActionPerformed
 
+    private void arbolButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_arbolButtonActionPerformed
+        // TODO add your handling code here:
+        String tipo = jTable1.getModel().getValueAt(jTable1.getSelectedRow(),6).toString();
+        String titulo = jTable1.getValueAt(jTable1.getSelectedRow(),0).toString();
+        generarArbol b = new generarArbol(tipo,titulo);
+        b.setSize(800, 400);
+        b.setLocation(5, 5);
+        
+        panelprincipal.removeAll();
+        panelprincipal.add(b, BorderLayout.CENTER);
+        panelprincipal.revalidate();
+        panelprincipal.repaint();
+    }//GEN-LAST:event_arbolButtonActionPerformed
+
     private void imprimirMateriales(BibliotecaList biblioteca){
         Object[] row = new Object[7];
         TableColumnModel tcm = jTable1.getColumnModel();
@@ -316,6 +342,7 @@ public class buscar extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton arbolButton;
     private javax.swing.JButton borrar;
     private javax.swing.JButton editar;
     private javax.swing.JButton jButton1;
