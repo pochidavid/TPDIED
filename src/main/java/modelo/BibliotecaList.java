@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
+import modelo.productos.Criterio;
 
 public class BibliotecaList implements Biblioteca {
     private ArrayList<MaterialCapacitacion> materiales;
@@ -128,4 +129,15 @@ public class BibliotecaList implements Biblioteca {
         }
         return null;
     }
+    
+    public BibliotecaList buscarPorCriterios(Criterio[] criterios){
+        BibliotecaList resultado = new BibliotecaList();
+        
+        for(MaterialCapacitacion material:materiales){
+            if(material.getArbol() != null && material.getArbol().cumpleCriterios(criterios)) resultado.agregar(material);
+        }
+        
+        return resultado;
+    }
+   
 }

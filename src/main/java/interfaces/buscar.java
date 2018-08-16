@@ -18,7 +18,10 @@ import javax.swing.table.TableModel;
 import static interfaces.Inicial.panelprincipal;
 import interfaces.generarArbol;
 import java.awt.BorderLayout;
+import java.util.ArrayList;
+import java.util.Arrays;
 import javax.swing.table.TableColumnModel;
+import modelo.productos.Criterio;
 
 /**
  *
@@ -36,6 +39,14 @@ public class buscar extends javax.swing.JPanel {
 
         imprimirMateriales(biblioteca);
     }
+    
+    public buscar(ArrayList<Criterio> criterios){
+        initComponents();
+        
+        BibliotecaList biblioteca =  GestorMaterial.biblioteca.buscarPorCriterios((criterios.toArray(new Criterio[criterios.size()])));
+        
+        imprimirMateriales(biblioteca);
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -51,8 +62,6 @@ public class buscar extends javax.swing.JPanel {
         jTextField1 = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -67,6 +76,7 @@ public class buscar extends javax.swing.JPanel {
         borrar = new javax.swing.JButton();
         editar = new javax.swing.JButton();
         arbolButton = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel1.setText("Buscar:");
@@ -74,8 +84,6 @@ public class buscar extends javax.swing.JPanel {
         jLabel2.setText("Título:");
 
         jLabel3.setText("Calificación:");
-
-        jLabel4.setText("Tema:");
 
         jLabel5.setText("Fecha de pubicación:");
 
@@ -149,6 +157,13 @@ public class buscar extends javax.swing.JPanel {
             }
         });
 
+        jButton2.setText("Agregar Criterio");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -167,7 +182,7 @@ public class buscar extends javax.swing.JPanel {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel5)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -178,19 +193,18 @@ public class buscar extends javax.swing.JPanel {
                                         .addComponent(jLabel7)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jButtonBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(48, 48, 48)
+                                        .addComponent(jButtonBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE))
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel3)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel4)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(0, 0, Short.MAX_VALUE)))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jButton2)
+                                        .addGap(20, 20, 20)))))
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jButtonAgregar)
@@ -217,8 +231,7 @@ public class buscar extends javax.swing.JPanel {
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3)
                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButton2))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -237,7 +250,7 @@ public class buscar extends javax.swing.JPanel {
                     .addComponent(borrar)
                     .addComponent(editar)
                     .addComponent(arbolButton))
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -304,7 +317,8 @@ public class buscar extends javax.swing.JPanel {
         // TODO add your handling code here:
         String tipo = jTable1.getModel().getValueAt(jTable1.getSelectedRow(),6).toString();
         String titulo = jTable1.getValueAt(jTable1.getSelectedRow(),0).toString();
-        generarArbol b = new generarArbol(tipo,titulo);
+        Integer id = Integer.parseInt(jTable1.getModel().getValueAt(jTable1.getSelectedRow(),5).toString());
+        generarArbol b = new generarArbol(tipo,titulo,id);
         b.setSize(800, 400);
         b.setLocation(5, 5);
         
@@ -313,6 +327,18 @@ public class buscar extends javax.swing.JPanel {
         panelprincipal.revalidate();
         panelprincipal.repaint();
     }//GEN-LAST:event_arbolButtonActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        listaCriterios m = new listaCriterios();
+        m.setSize(800, 400);
+        m.setLocation(5, 5);
+        
+        panelprincipal.removeAll();
+        panelprincipal.add(m, BorderLayout.CENTER);
+        panelprincipal.revalidate();
+        panelprincipal.repaint();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     private void imprimirMateriales(BibliotecaList biblioteca){
         Object[] row = new Object[7];
@@ -346,6 +372,7 @@ public class buscar extends javax.swing.JPanel {
     private javax.swing.JButton borrar;
     private javax.swing.JButton editar;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButtonAgregar;
     private javax.swing.JButton jButtonAsignar;
     private javax.swing.JButton jButtonBuscar;
@@ -354,7 +381,6 @@ public class buscar extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -362,6 +388,5 @@ public class buscar extends javax.swing.JPanel {
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 }

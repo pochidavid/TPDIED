@@ -5,6 +5,8 @@
  */
 package modelo.productos;
 
+import java.util.List;
+
 /**
  *
  * @author Victorique
@@ -12,5 +14,6 @@ package modelo.productos;
 public enum TipoNodo {
     TITULO, METADATO, AUTOR, SECCION, PARRAFO, 
     CAPITULO, EDITORIAL, RESUMEN, PALABRA_CLAVE,
-    FECHA_PUBLICACION, EJERCICIO, SOLUCION
+    FECHA_PUBLICACION, EJERCICIO, SOLUCION;
+    
 }

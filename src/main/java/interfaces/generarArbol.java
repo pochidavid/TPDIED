@@ -13,6 +13,10 @@ import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.*;
 
 import estructuras.Nodo;
+import gestores.GestorMaterial;
+import static interfaces.Inicial.panelprincipal;
+import java.awt.BorderLayout;
+import modelo.productos.MaterialCapacitacion;
 import modelo.productos.TipoNodo;
 
 import java.util.ArrayList;
@@ -31,14 +35,19 @@ public class generarArbol extends javax.swing.JPanel {
     /**
      * Creates new form generarArbol
      */
-    public generarArbol(String tipo, String titulo) {
+    public generarArbol(String tipo, String titulo, Integer id) {
         initComponents();
         this.tipo = tipo;
         this.titulo = titulo;
 
 
-        arbol = new Arbol(TipoNodo.TITULO,titulo);
-
+        MaterialCapacitacion material = GestorMaterial.biblioteca.buscarPorId(id);
+        if(material.getArbol() == null){
+            arbol = new Arbol(TipoNodo.TITULO,titulo);
+            material.setArbol(arbol);
+        }
+        else arbol = material.getArbol();
+        
         arbolTree.getSelectionModel().setSelectionMode
                 (TreeSelectionModel.SINGLE_TREE_SELECTION);
         arbolTree.addTreeSelectionListener(new TreeSelectionListener() {
@@ -62,7 +71,7 @@ public class generarArbol extends javax.swing.JPanel {
                 seleccionado =obtenerNodo(arbol,new ArrayList<>(Arrays.asList(node.getUserObjectPath())));
                 tipoCombo.setModel(new DefaultComboBoxModel(seleccionado.getPosiblesHijos().toArray()));
                 detallesText.setText(seleccionado.toString()+"\nContenido: "+seleccionado.getValor());
-                
+
             }
         });
         imprimirArbol();
@@ -78,6 +87,7 @@ public class generarArbol extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPopupMenu1 = new javax.swing.JPopupMenu();
         tipoCombo = new javax.swing.JComboBox<>();
         agregarButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -92,6 +102,7 @@ public class generarArbol extends javax.swing.JPanel {
         contenidoText = new javax.swing.JTextArea();
         jScrollPane3 = new javax.swing.JScrollPane();
         detallesText = new javax.swing.JTextArea();
+        Salir = new javax.swing.JButton();
 
         agregarButton.setText("Agregar");
         agregarButton.addActionListener(new java.awt.event.ActionListener() {
@@ -123,6 +134,13 @@ public class generarArbol extends javax.swing.JPanel {
         detallesText.setRows(5);
         jScrollPane3.setViewportView(detallesText);
 
+        Salir.setText("Salir");
+        Salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SalirActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -141,15 +159,18 @@ public class generarArbol extends javax.swing.JPanel {
                                 .addComponent(agregarButton)
                                 .addGap(20, 20, 20))
                             .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Salir))
+                            .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel2)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(tipoCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jLabel3)
-                                    .addComponent(jLabel1)
                                     .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 447, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 0, 0))))
+                                .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane3)
                         .addContainerGap())))
@@ -160,8 +181,10 @@ public class generarArbol extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel1)
-                        .addGap(28, 28, 28)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(Salir))
+                        .addGap(20, 20, 20)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
                             .addComponent(tipoCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -182,9 +205,21 @@ public class generarArbol extends javax.swing.JPanel {
 
     private void agregarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarButtonActionPerformed
         // TODO add your handling code here:
-        seleccionado.agregarHijo(new Arbol(TipoNodo.valueOf(tipoCombo.getSelectedItem().toString()),contenidoText.getText()));
+        if(seleccionado != null) seleccionado.agregarHijo(new Arbol(TipoNodo.valueOf(tipoCombo.getSelectedItem().toString()),contenidoText.getText()));
         imprimirArbol();
     }//GEN-LAST:event_agregarButtonActionPerformed
+
+    private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
+        // TODO add your handling code here:
+        buscar b = new buscar();
+        b.setSize(800, 400);
+        b.setLocation(5, 5);
+        
+        panelprincipal.removeAll();
+        panelprincipal.add(b, BorderLayout.CENTER);
+        panelprincipal.revalidate();
+        panelprincipal.repaint();
+    }//GEN-LAST:event_SalirActionPerformed
 
     private void imprimirArbol(){
         agregarButton.setEnabled(false);
@@ -222,6 +257,7 @@ public class generarArbol extends javax.swing.JPanel {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Salir;
     private javax.swing.JButton agregarButton;
     private javax.swing.JTree arbolTree;
     private javax.swing.JTextArea contenidoText;
@@ -229,6 +265,7 @@ public class generarArbol extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;

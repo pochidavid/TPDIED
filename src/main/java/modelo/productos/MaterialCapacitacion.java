@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Objects;
 
+import estructuras.Arbol;
 import util.Ordenable;
 
 /**
@@ -39,6 +40,8 @@ public abstract class MaterialCapacitacion implements Ordenable,Comparable {
         protected RelevanciaEnum relevancia = RelevanciaEnum.BAJA;
 
         protected Boolean activo;
+
+        protected Arbol arbol;
 
 	/**
 	 * Constructor por defecto
@@ -193,6 +196,10 @@ public abstract class MaterialCapacitacion implements Ordenable,Comparable {
     public Boolean getActivo() {
         return activo;
     }
+
+    public void setArbol(Arbol arbol){this.arbol = arbol;}
+
+    public Arbol getArbol(){return arbol;}
 
     public void setActivo(Boolean activo) {
         this.activo = activo;
