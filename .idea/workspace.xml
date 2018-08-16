@@ -2,34 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eb7ac485-97e4-4e41-ae56-c3a25c2f38b2" name="Default" comment="Editar">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_persistence_commonj_sdo_2_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_persistence_eclipselink_2_5_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_persistence_javax_persistence_2_1_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TPDIED.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TPDIED.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/interfaces/buscar.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/interfaces/buscar.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/interfaces/buscar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/interfaces/buscar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/interfaces/generarArbol.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/interfaces/generarArbol.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/interfaces/generarArbol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/interfaces/generarArbol.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/BibliotecaList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/BibliotecaList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/productos/MaterialCapacitacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/productos/MaterialCapacitacion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/productos/TipoNodo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/productos/TipoNodo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/estructuras/Nodo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/estructuras/Nodo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interfaces/buscar$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interfaces/buscar$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interfaces/buscar$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interfaces/buscar$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interfaces/buscar$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interfaces/buscar$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interfaces/buscar$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interfaces/buscar$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interfaces/buscar$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interfaces/buscar$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interfaces/buscar$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interfaces/buscar$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interfaces/buscar$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interfaces/buscar$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interfaces/buscar.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interfaces/buscar.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interfaces/generarArbol$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interfaces/generarArbol$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interfaces/generarArbol$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interfaces/generarArbol$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interfaces/generarArbol.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interfaces/generarArbol.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/modelo/productos/MaterialCapacitacion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/modelo/productos/MaterialCapacitacion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/modelo/productos/TipoNodo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/modelo/productos/TipoNodo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tpDatos.csv" beforeDir="false" afterPath="$PROJECT_DIR$/tpDatos.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/interfaces/wishList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/interfaces/wishList.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -55,14 +28,14 @@
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.11" value="5" />
           <entry key="project.open.time.12" value="4" />
-          <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.13" value="2" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.15" value="2" />
           <entry key="project.open.time.16" value="3" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="20" />
+          <entry key="project.opened" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -71,7 +44,7 @@
           <entry key="class" value="1" />
           <entry key="classpath" value="1" />
           <entry key="form" value="4" />
-          <entry key="java" value="57" />
+          <entry key="java" value="58" />
           <entry key="mf" value="1" />
           <entry key="snippet" value="1" />
           <entry key="xml" value="3" />
@@ -82,7 +55,7 @@
           <entry key="CLASS" value="1" />
           <entry key="Eclipse" value="1" />
           <entry key="GUI_DESIGNER_FORM" value="4" />
-          <entry key="JAVA" value="57" />
+          <entry key="JAVA" value="58" />
           <entry key="Manifest" value="1" />
           <entry key="Scratch" value="1" />
           <entry key="UML" value="2" />
@@ -92,7 +65,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="classpath" value="16" />
-          <entry key="java" value="9628" />
+          <entry key="java" value="9741" />
           <entry key="txt" value="17" />
           <entry key="xml" value="21" />
         </counts>
@@ -100,7 +73,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Eclipse" value="16" />
-          <entry key="JAVA" value="9628" />
+          <entry key="JAVA" value="9741" />
           <entry key="PLAIN_TEXT" value="17" />
           <entry key="XML" value="21" />
         </counts>
@@ -113,24 +86,11 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/estructuras/Nodo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="753">
-              <caret line="92" column="54" selection-start-line="92" selection-start-column="54" selection-end-line="92" selection-end-column="54" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/interfaces/generarArbol.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="398">
+            <state relative-caret-position="1065">
               <caret line="207" column="33" selection-start-line="207" selection-start-column="33" selection-end-line="207" selection-end-column="33" />
               <folding>
-                <element signature="e#2850#2880#0" expanded="true" />
                 <element signature="e#2885#2974#0" expanded="true" />
                 <element signature="e#4006#4007#0" expanded="true" />
                 <element signature="e#4071#4072#0" expanded="true" />
@@ -144,7 +104,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/estructuras/Arbol.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="67">
+            <state relative-caret-position="60">
               <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -156,16 +116,16 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/interfaces/agregarCriterio.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
+            <state relative-caret-position="510">
               <caret line="126" selection-start-line="126" selection-end-line="126" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/interfaces/listaCriterios.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1221">
+            <state relative-caret-position="15">
               <caret line="30" column="28" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
               <folding>
                 <element signature="e#1047#1136#0" expanded="true" />
@@ -176,10 +136,19 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/interfaces/wishList.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="54" column="6" selection-start-line="54" selection-start-column="6" selection-end-line="54" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/modelo/productos/MaterialCapacitacion.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
+            <state relative-caret-position="2400">
               <caret line="201" column="42" selection-start-line="201" selection-start-column="42" selection-end-line="201" selection-end-column="42" />
             </state>
           </provider>
@@ -188,13 +157,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/interfaces/buscar.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
+            <state relative-caret-position="375">
               <caret line="45" column="134" selection-start-line="45" selection-start-column="134" selection-end-line="45" selection-end-column="134" />
-              <folding>
-                <element signature="e#1187#1276#0" expanded="true" />
-                <element signature="e#5332#5333#0" expanded="true" />
-                <element signature="e#5392#5393#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -202,7 +166,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/modelo/BibliotecaList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="373">
+            <state relative-caret-position="1830">
               <caret line="136" column="46" selection-start-line="136" selection-start-column="46" selection-end-line="136" selection-end-column="46" />
             </state>
           </provider>
@@ -276,7 +240,6 @@
         <option value="$PROJECT_DIR$/src/main/java/modelo/productos/MaterialCapacitacionComparator.java" />
         <option value="$PROJECT_DIR$/src/main/java/modelo/productos/Libro.java" />
         <option value="$PROJECT_DIR$/src/main/java/interfaces/crear.java" />
-        <option value="$PROJECT_DIR$/src/main/java/interfaces/wishList.java" />
         <option value="$PROJECT_DIR$/src/main/java/modelo/productos/Video.java" />
         <option value="$PROJECT_DIR$/src/main/java/interfaces/editar.java" />
         <option value="$PROJECT_DIR$/src/main/java/gestores/GestorMaterial.java" />
@@ -293,6 +256,7 @@
         <option value="$PROJECT_DIR$/src/main/java/interfaces/generarArbol.java" />
         <option value="$PROJECT_DIR$/src/main/java/interfaces/buscar.java" />
         <option value="$PROJECT_DIR$/src/main/java/modelo/BibliotecaList.java" />
+        <option value="$PROJECT_DIR$/src/main/java/interfaces/wishList.java" />
       </list>
     </option>
   </component>
@@ -318,6 +282,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -398,9 +365,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -555,6 +519,7 @@
       <workItem from="1534252127053" duration="13824000" />
       <workItem from="1534281944460" duration="1247000" />
       <workItem from="1534355190417" duration="7295000" />
+      <workItem from="1534442411432" duration="810000" />
     </task>
     <task id="LOCAL-00001" summary="Editar">
       <created>1534017872531</created>
@@ -567,7 +532,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97244000" />
+    <option name="totallyTimeSpent" value="98054000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -582,7 +547,7 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.32761088" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3319027" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Learn" order="2" weight="0.3297568" />
       <window_info id="Image Layers" order="3" />
@@ -592,7 +557,7 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32891566" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32891566" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -747,20 +712,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/interfaces/wishList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="49" column="31" selection-start-line="49" selection-start-column="31" selection-end-line="49" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/estructuras/ArbolN_ario.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -776,19 +731,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
-          <folding>
-            <element signature="e#203#204#0" expanded="true" />
-            <element signature="e#231#232#0" expanded="true" />
-            <element signature="e#275#276#0" expanded="true" />
-            <element signature="e#309#310#0" expanded="true" />
-            <element signature="e#373#374#0" expanded="true" />
-            <element signature="e#419#420#0" expanded="true" />
-            <element signature="e#451#452#0" expanded="true" />
-            <element signature="e#483#484#0" expanded="true" />
-            <element signature="e#511#512#0" expanded="true" />
-            <element signature="e#553#554#0" expanded="true" />
-            <element signature="e#587#588#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -820,6 +762,75 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/estructuras/Nodo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1305">
+          <caret line="92" column="54" selection-start-line="92" selection-start-column="54" selection-end-line="92" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/interfaces/generarArbol.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1065">
+          <caret line="207" column="33" selection-start-line="207" selection-start-column="33" selection-end-line="207" selection-end-column="33" />
+          <folding>
+            <element signature="e#2885#2974#0" expanded="true" />
+            <element signature="e#4006#4007#0" expanded="true" />
+            <element signature="e#4071#4072#0" expanded="true" />
+            <element signature="e#5032#5033#0" expanded="true" />
+            <element signature="e#5089#5090#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/estructuras/Arbol.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/interfaces/agregarCriterio.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="126" selection-start-line="126" selection-end-line="126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/modelo/productos/MaterialCapacitacion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2400">
+          <caret line="201" column="42" selection-start-line="201" selection-start-column="42" selection-end-line="201" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/interfaces/buscar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="45" column="134" selection-start-line="45" selection-start-column="134" selection-end-line="45" selection-end-column="134" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/modelo/BibliotecaList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1830">
+          <caret line="136" column="46" selection-start-line="136" selection-start-column="46" selection-end-line="136" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/interfaces/Inicial.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="750">
+          <caret line="116" column="12" selection-start-line="116" selection-start-column="12" selection-end-line="116" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/modelo/productos/Video.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -834,90 +845,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/estructuras/Nodo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="753">
-          <caret line="92" column="54" selection-start-line="92" selection-start-column="54" selection-end-line="92" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/modelo/productos/MaterialCapacitacion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="201" column="42" selection-start-line="201" selection-start-column="42" selection-end-line="201" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/interfaces/Inicial.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="750">
-          <caret line="116" column="12" selection-start-line="116" selection-start-column="12" selection-end-line="116" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/estructuras/Arbol.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="67">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/interfaces/agregarCriterio.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="126" selection-start-line="126" selection-end-line="126" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/interfaces/generarArbol.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="207" column="33" selection-start-line="207" selection-start-column="33" selection-end-line="207" selection-end-column="33" />
-          <folding>
-            <element signature="e#2850#2880#0" expanded="true" />
-            <element signature="e#2885#2974#0" expanded="true" />
-            <element signature="e#4006#4007#0" expanded="true" />
-            <element signature="e#4071#4072#0" expanded="true" />
-            <element signature="e#5032#5033#0" expanded="true" />
-            <element signature="e#5089#5090#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/interfaces/buscar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="45" column="134" selection-start-line="45" selection-start-column="134" selection-end-line="45" selection-end-column="134" />
-          <folding>
-            <element signature="e#1187#1276#0" expanded="true" />
-            <element signature="e#5332#5333#0" expanded="true" />
-            <element signature="e#5392#5393#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/modelo/BibliotecaList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="136" column="46" selection-start-line="136" selection-start-column="46" selection-end-line="136" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/interfaces/listaCriterios.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1221">
+        <state relative-caret-position="15">
           <caret line="30" column="28" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
           <folding>
             <element signature="e#1047#1136#0" expanded="true" />
             <element signature="e#2332#2333#0" expanded="true" />
             <element signature="e#2396#2397#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/interfaces/wishList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="54" column="6" selection-start-line="54" selection-start-column="6" selection-end-line="54" selection-end-column="6" />
         </state>
       </provider>
     </entry>

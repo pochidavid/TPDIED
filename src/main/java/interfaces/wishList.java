@@ -35,7 +35,12 @@ public class wishList extends javax.swing.JPanel {
         DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
         modelo.setRowCount(0);
 
-        Object[] materialArray = Usuario.getWishList().toArray();
+        Object[] materialArray = new Object[Usuario.getWishList().size()];
+
+        for(int i=0; i<materialArray.length;i++){
+            materialArray[i] = Usuario.getWishList().poll();
+        }
+        //Object[] materialArray = Usuario.getWishList().toArray();
 
         for(Object material:materialArray){
 
